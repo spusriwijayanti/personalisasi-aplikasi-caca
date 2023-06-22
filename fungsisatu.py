@@ -66,23 +66,7 @@ def main():
     # Load YOLOv5 model
     model = load_model()
     
-    # Upload image
-    uploaded_image = st.file_uploader("Pilih gambar e-KTP anda", type=["jpg"])
-    
-    if uploaded_image is not None:
-        image = Image.open(uploaded_image)
-        st.image(image, caption="Gambar yang di unggah", use_column_width=True)
-        
-        # Convert image to numpy array
-        image_array = np.array(image)
-        
-        # Perform object detection and text recognition
-        results = bacaannya_apa(image_array, model)
-        
-        # Display results
-        st.write("e-KTP terdeteksi dan teksnya:")
-        for result in results:
-            st.write(f"Kelas: {result[0]}, Teks: {result[1]}")
+    st.write('halo')
 
 if __name__ == "__main__":
     main()
